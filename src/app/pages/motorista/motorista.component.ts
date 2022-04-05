@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./motorista.component.sass']
 })
 export class MotoristaComponent implements OnInit {
-
+  pageTitle: string ="Cadastro de Motorista"
   constructor() { }
 
   ngOnInit(): void {

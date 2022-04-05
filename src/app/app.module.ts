@@ -24,6 +24,8 @@ import { CtrcComponent } from './pages/ctrc/ctrc.component';
 import { EdiComponent } from './pages/edi/edi.component';
 import { MaterialModule } from './material/material.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { TitleComponent } from './components/title/title.component';
+import { LinkbuttonComponent } from './components/linkbutton/linkbutton.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     CtrcComponent,
     EdiComponent,
     ToolbarComponent,
+    TitleComponent,
+    LinkbuttonComponent,
   ],
   imports: [
     BrowserAnimationsModule,

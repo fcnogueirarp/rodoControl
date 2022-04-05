@@ -1,1 +1,60 @@
-<p>veiculos works!</p>
+<app-title [pageTitle]="pageTitle"></app-title>
+<section class="container">
+  <mat-horizontal-stepper linear>
+    <mat-step label="Dados Veículo" completed="true">
+      <h6>Criar um select aqui com os valores: Van, Caminhão, Ônibus, Avião</h6>
+      <div>
+        <mat-form-field hideRequiredMarker Appearance="legacy">
+          <mat-label>Marca</mat-label>
+          <input matInput required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field hideRequiredMarker Appearance="legacy">
+          <mat-label>Cor</mat-label>
+          <input matInput required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field hideRequiredMarker appearance="legacy" color="warn">
+          <mat-label>Quantidade</mat-label>
+          <input matInput required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field hideRequiredMarker appearance="legacy">
+          <mat-label>Contato</mat-label>
+          <input matInput required />
+        </mat-form-field>
+      </div>
+
+      <button mat-button matStepperPrevious>Voltar</button>
+      <button mat-button matStepperNext>Próximo</button>
+    </mat-step>
+
+    <!--Endereço-->
+    <mat-step label="Dados Nota Fiscal" completed="true">
+      <div>
+        <mat-form-field hideRequiredMarker Appearance="legacy">
+          <mat-label>Tipo do Bem</mat-label>
+          <input matInput required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field hideRequiredMarker Appearance="legacy">
+          <mat-label>Concessionária</mat-label>
+          <input matInput required />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field hideRequiredMarker appearance="legacy">
+          <mat-label>Valor total da nota</mat-label>
+          <input matInput required />
+        </mat-form-field>
+      </div>
+
+      <button mat-button matStepperPrevious>Voltar</button>
+      <button mat-button matStepperNext>Próximo</button>
+    </mat-step>
+  </mat-horizontal-stepper>
+</section>

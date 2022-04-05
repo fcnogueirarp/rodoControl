@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
     },
     {
       id: 10,
-      title: 'motoristas',
+      title: 'motorista',
       image: 'person_add_alt_1',
     },
     {
