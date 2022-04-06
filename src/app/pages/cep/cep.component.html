@@ -1,0 +1,13 @@
+<app-title [pageTitle]="pageTitle"></app-title>
+<mat-form-field class="form" appearance="legacy">
+  <mat-label>Digite o CEP</mat-label>
+  <input matInput placeholder="Digite o CEP"/>
+</mat-form-field>
+
+<mat-card class="card">
+  <mat-card-subtitle>{{ ceps.logradouro }}</mat-card-subtitle>
+  <mat-card-subtitle>Bairro: {{ ceps.bairro }}</mat-card-subtitle>
+  <mat-card-subtitle
+    >Cidade: {{ ceps.localidade }} / {{ ceps.uf }}</mat-card-subtitle
+  >
+</mat-card>

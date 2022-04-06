@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
     },
     {
       id: 12,
-      title: 'ctrc',
+      title: 'CEP',
       image: 'newspaper',
     },
     {

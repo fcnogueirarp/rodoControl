@@ -2,7 +2,9 @@
 <section>
   <mat-grid-list cols="4" rowHeight="1:0.7">
     <mat-grid-tile *ngFor="let card of cards"
-      ><mat-card class="card" routerLink="/{{ card.title }}">
+      >
+
+      <mat-card class="card" routerLink="/{{ card.title }}">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>{{ card.title | uppercase }}</mat-card-title>
@@ -14,16 +16,6 @@
           aria-label="Example home icon"
           >{{ card.image }}
         </mat-icon>
-        <mat-card-actions>
-          <mat-icon
-            (cick)="show = !show"
-            color="warn"
-            id="icon_eye"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            >visibility_off</mat-icon
-          >
-        </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

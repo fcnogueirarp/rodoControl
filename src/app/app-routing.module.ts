@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrosComponent } from './pages/cadastros/cadastros.component';
+import { CepComponent } from './pages/cep/cep.component';
 import { CteComponent } from './pages/cte/cte.component';
 import { CtrcComponent } from './pages/ctrc/ctrc.component';
 import { DespesasComponent } from './pages/despesas/despesas.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'nfe', component: NfeComponent },
   { path: 'pneus', component: PneusComponent },
   { path: 'veiculos', component: VeiculosComponent },
+  { path: 'CEP', component: CepComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

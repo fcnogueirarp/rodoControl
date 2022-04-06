@@ -26,6 +26,7 @@ import { MaterialModule } from './material/material.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { TitleComponent } from './components/title/title.component';
 import { LinkbuttonComponent } from './components/linkbutton/linkbutton.component';
+import { CepComponent } from './pages/cep/cep.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { LinkbuttonComponent } from './components/linkbutton/linkbutton.componen
     ToolbarComponent,
     TitleComponent,
     LinkbuttonComponent,
+    CepComponent,
   ],
   imports: [
     BrowserAnimationsModule,
