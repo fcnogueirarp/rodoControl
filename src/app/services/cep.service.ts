@@ -6,11 +6,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class ListService {
-  private readonly Api = 'https://viacep.com.br/ws/14092040/json/';
+export class CepService {
+  cep: string | null = '14092040';
+  private readonly ApiCep = `https://viacep.com.br/ws/${this.cep}/json/`;
+
   constructor(private http: HttpClient) {}
 
-  list(): Observable<ICep> {
-    return this.http.get<ICep>(this.Api);
+  listaCep(): Observable<ICep> {
+    return this.http.get<ICep>(this.ApiCep);
   }
 }

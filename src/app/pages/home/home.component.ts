@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from 'src/card';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -84,4 +85,6 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+
 }

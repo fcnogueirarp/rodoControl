@@ -1,1 +1,13 @@
-<p>medias works!</p>
+<form class="container" [formGroup]="mediaForm" (ngSubmit)="showMedia()">
+  <mat-form-field appearance="fill">
+    <mat-label>Km Rodados</mat-label>
+    <input matInput formControlName="km" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Quantidade de Litros</mat-label>
+    <input matInput formControlName="qde" />
+  </mat-form-field>
+  <button type="submit" mat-button>Calcular</button>
+</form>
+
+<div class="resultado">Quantidade Km/Litro: {{ resultado }} km</div>

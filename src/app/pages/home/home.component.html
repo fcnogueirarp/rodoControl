@@ -1,9 +1,7 @@
 <!--Grid-->
 <section>
-  <mat-grid-list cols="4" rowHeight="1:0.7">
-    <mat-grid-tile *ngFor="let card of cards"
-      >
-
+  <mat-grid-list cols="4" rowHeight="1:0.5">
+    <mat-grid-tile *ngFor="let card of cards">
       <mat-card class="card" routerLink="/{{ card.title }}">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>

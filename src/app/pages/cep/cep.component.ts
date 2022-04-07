@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ListService } from 'src/app/services/list.service';
+import { Component, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CepService } from 'src/app/services/cep.service';
 import { ICep } from './icep';
-
 
 @Component({
   selector: 'app-cep',
@@ -9,7 +9,12 @@ import { ICep } from './icep';
   styleUrls: ['./cep.component.sass'],
 })
 export class CepComponent implements OnInit {
-  pageTitle: string = "Consulta CEP"
+  searchCep: string = '';
+
+  cepForm = new FormGroup({
+    cep: new FormControl('', Validators.required),
+  });
+  pageTitle: string = 'Consulta CEP';
   ceps: ICep = {
     cep: '',
     logradouro: '',
@@ -23,13 +28,18 @@ export class CepComponent implements OnInit {
     siafi: '',
   };
 
-  constructor(private service: ListService) {
+  constructor(private service: CepService) {
     this.getCep();
   }
 
   ngOnInit(): void {}
 
   getCep(): void {
-    this.service.list().subscribe((cep) => console.log((this.ceps = cep)));
+    this.service.listaCep().subscribe((cep) => console.log((this.ceps = cep)));
+    this.showCep();
+  }
+
+  showCep() {
+    this.searchCep = this.cepForm.value.cep;
   }
 }

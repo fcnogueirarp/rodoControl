@@ -3,10 +3,7 @@
   <mat-vertical-stepper linear>
     <mat-step label="Dados Pessoais" completed="true">
       <div>
-        <mat-form-field hideRequiredMarker Appearance="legacy">
-          <mat-label>Foto</mat-label>
-          <input matInput required />
-        </mat-form-field>
+        <input type="file" />
       </div>
       <div>
         <mat-form-field hideRequiredMarker Appearance="legacy">
@@ -27,13 +24,14 @@
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field hideRequiredMarker appearance="legacy">
-          <mat-label>Habilitação</mat-label>
-          <input matInput required />
-        </mat-form-field>
+        <mat-label>Habilitação</mat-label>
+        <mat-checkbox labelPosition= "before" color="warn"> Categoria A </mat-checkbox>
+        <mat-checkbox labelPosition= "before" color="warn"> Categoria B </mat-checkbox>
+        <mat-checkbox labelPosition= "before" color="warn"> Categoria C </mat-checkbox>
+        <mat-checkbox labelPosition= "before" color="warn"> Categoria D </mat-checkbox>
+        <mat-checkbox labelPosition= "before" color="warn"> Categoria E </mat-checkbox>
       </div>
 
-      <button mat-button matStepperPrevious>Voltar</button>
       <button mat-button matStepperNext>Próximo</button>
     </mat-step>
 
@@ -81,7 +79,6 @@
       </div>
 
       <button mat-button matStepperPrevious>Voltar</button>
-      <button mat-button matStepperNext>Próximo</button>
     </mat-step>
   </mat-vertical-stepper>
 </section>

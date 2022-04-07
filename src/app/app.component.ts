@@ -9,6 +9,7 @@ import { Card } from 'src/card';
 export class AppComponent {
   title = 'rodoControl';
   pagetitle: string = '';
+  teste: string = "Fernando"
 
 
 }

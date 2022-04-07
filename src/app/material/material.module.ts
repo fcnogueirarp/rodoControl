@@ -9,7 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -22,7 +25,10 @@ const MaterialComponents = [
   MatButtonModule,
   MatAutocompleteModule,
   MatDividerModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatSelectModule,
+  MatCheckboxModule,
+  MatMenuModule
 ];
 
 @NgModule({
