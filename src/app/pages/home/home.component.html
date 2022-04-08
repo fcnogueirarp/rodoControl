@@ -1,5 +1,10 @@
 <!--Grid-->
-<mat-grid-list cols="4" rowHeight="fit" style="height: 800px" gutterSize="5px">
+<mat-grid-list
+  [cols]="breakpoint"
+  rowHeight="11em"
+  gutterSize="5px"
+  (window:resize)="onResize($event)"
+>
   <mat-grid-tile *ngFor="let card of cards">
     <mat-card class="card" routerLink="/{{ card.title }}">
       <mat-card-header>

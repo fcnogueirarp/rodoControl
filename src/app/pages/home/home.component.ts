@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from 'src/card';
-import { cards } from '../../../cards'
-
+import { cards } from '../../../cards';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +8,17 @@ import { cards } from '../../../cards'
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
-  cards: Card[] = [...cards]
+  breakpoint: any;
+  cards: Card[] = [...cards];
 
   show: boolean = false;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.breakpoint = window.innerWidth <= 480 ? 1 : 4;
+  }
 
-
+  onResize(event: any) {
+    this.breakpoint = event.target.innerWidth <= 480 ? 1 : 4;
+  }
 }
