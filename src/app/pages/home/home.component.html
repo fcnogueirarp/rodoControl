@@ -1,19 +1,18 @@
 <!--Grid-->
-  <mat-grid-list cols="4" rowHeight="1:0.5">
-    <mat-grid-tile *ngFor="let card of cards">
-      <mat-card class="card" routerLink="/{{ card.title }}">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ card.title | uppercase }}</mat-card-title>
-        </mat-card-header>
-        <mat-icon
-          show
-          class="principal_Icon"
-          aria-hidden="false"
-          aria-label="Example home icon"
-          >{{ card.image }}
-        </mat-icon>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-
+<mat-grid-list cols="4" rowHeight="fit" style="height: 800px" gutterSize="5px">
+  <mat-grid-tile *ngFor="let card of cards">
+    <mat-card class="card" routerLink="/{{ card.title }}">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ card.title | uppercase }}</mat-card-title>
+      </mat-card-header>
+      <mat-icon
+        show
+        class="principal_Icon"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        >{{ card.image }}
+      </mat-icon>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
