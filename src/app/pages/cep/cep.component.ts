@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, OnChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CepService } from 'src/app/services/cep.service';
 import { ICep } from './icep';
@@ -8,7 +8,7 @@ import { ICep } from './icep';
   templateUrl: './cep.component.html',
   styleUrls: ['./cep.component.sass'],
 })
-export class CepComponent implements OnInit {
+export class CepComponent implements OnChanges {
   searchCep: string = '';
 
   cepForm = new FormGroup({
@@ -32,14 +32,16 @@ export class CepComponent implements OnInit {
     this.getCep();
   }
 
-  ngOnInit(): void {}
+  ngOnChanges(): void {
+    this.searchCep;
+  }
 
   getCep(): void {
     this.service.listaCep().subscribe((cep) => console.log((this.ceps = cep)));
-    this.showCep();
   }
 
   showCep() {
     this.searchCep = this.cepForm.value.cep;
+    localStorage.setItem('cep', this.searchCep);
   }
 }

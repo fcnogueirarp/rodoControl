@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ICep } from '../pages/cep/icep';
 import { Observable } from 'rxjs';
@@ -6,9 +6,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class CepService {
-  cep: string | null = '14092040';
-  private readonly ApiCep = `https://viacep.com.br/ws/${this.cep}/json/`;
+export class CepService implements OnChanges{
+  ngOnChanges(){}
+  cep = localStorage.getItem('cep');
+  private ApiCep = `https://viacep.com.br/ws/${this.cep}/json/`;
 
   constructor(private http: HttpClient) {}
 
