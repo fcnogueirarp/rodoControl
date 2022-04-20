@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrosComponent } from './pages/cadastros/cadastros.component';
 import { CepComponent } from './pages/cep/cep.component';
+import { ConsultasComponent } from './pages/consultas/consultas.component';
 import { CteComponent } from './pages/cte/cte.component';
 import { CtrcComponent } from './pages/ctrc/ctrc.component';
 import { DespesasComponent } from './pages/despesas/despesas.component';
@@ -18,7 +19,7 @@ import { VeiculosComponent } from './pages/veiculos/veiculos.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'cadastros', component: CadastrosComponent },
+  { path: 'consultas', component: ConsultasComponent },
   { path: 'cte', component: CteComponent },
   { path: 'ctrc', component: CtrcComponent },
   { path: 'despesas', component: DespesasComponent },
