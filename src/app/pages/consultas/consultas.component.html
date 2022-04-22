@@ -9,11 +9,14 @@
 
 <div class="cards">
   <mat-card *ngFor="let funcionario of funcionarios">
-    <mat-card-title>{{ funcionario.nome }}</mat-card-title>
+    <mat-card-title (click)="retrieveFuncionario(funcionario.id)">{{ funcionario.nome }}</mat-card-title>
     <mat-card-subtitle>{{ funcionario.cpf }}</mat-card-subtitle>
     <mat-card-subtitle>{{ funcionario.email }}</mat-card-subtitle>
-    <mat-card-subtitle
-      >Habilitação: {{ funcionario.habilitacao }}</mat-card-subtitle
-    >
+    <mat-card-subtitle>Habilitação: {{ funcionario.habilitacao }}</mat-card-subtitle>
+    <mat-card-subtitle>bairro: {{ funcionario.bairro }}</mat-card-subtitle>
+    <mat-card-actions>
+      <mat-icon color="warn">delete</mat-icon>
+      <mat-icon color="primary">edit</mat-icon>
+    </mat-card-actions>
   </mat-card>
 </div>

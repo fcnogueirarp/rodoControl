@@ -1,84 +1,99 @@
 <app-title [pageTitle]="pageTitle"></app-title>
 <section class="container">
-  <mat-vertical-stepper linear>
-    <mat-step label="Dados Pessoais" completed="true">
-      <div>
-        <input type="file" />
-      </div>
-      <div>
-        <mat-form-field hideRequiredMarker Appearance="legacy">
-          <mat-label>Nome</mat-label>
-          <input matInput required />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field hideRequiredMarker appearance="legacy" color="warn">
-          <mat-label>CPF</mat-label>
-          <input matInput required />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field hideRequiredMarker appearance="legacy">
-          <mat-label>E-mail</mat-label>
-          <input matInput required />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-label>Habilitação</mat-label>
-        <mat-checkbox labelPosition= "before" color="warn"> Categoria A </mat-checkbox>
-        <mat-checkbox labelPosition= "before" color="warn"> Categoria B </mat-checkbox>
-        <mat-checkbox labelPosition= "before" color="warn"> Categoria C </mat-checkbox>
-        <mat-checkbox labelPosition= "before" color="warn"> Categoria D </mat-checkbox>
-        <mat-checkbox labelPosition= "before" color="warn"> Categoria E </mat-checkbox>
-      </div>
+  <form [formGroup]="funcionarioForm" class="form">
+    <mat-vertical-stepper linear>
+      <mat-step label="Dados Pessoais" completed="true">
+        <div>
+          <mat-label>Foto</mat-label>
+          <input type="file" formControlName="foto" />
+        </div>
+        <div>
+          <mat-form-field hideRequiredMarker Appearance="legacy">
+            <mat-label>Nome</mat-label>
+            <input matInput required formControlName="nome" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field hideRequiredMarker appearance="legacy" color="warn">
+            <mat-label>CPF</mat-label>
+            <input matInput required formControlName="cpf" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field hideRequiredMarker appearance="standard">
+            <mat-label>E-mail</mat-label>
+            <input matInput required formControlName="email" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-label>Habilitação</mat-label>
+          <mat-checkbox labelPosition="before" color="warn">
+            Categoria A
+          </mat-checkbox>
+          <mat-checkbox labelPosition="before" color="warn">
+            Categoria B
+          </mat-checkbox>
+          <mat-checkbox labelPosition="before" color="warn">
+            Categoria C
+          </mat-checkbox>
+          <mat-checkbox labelPosition="before" color="warn">
+            Categoria D
+          </mat-checkbox>
+          <mat-checkbox labelPosition="before" color="warn">
+            Categoria E
+          </mat-checkbox>
+        </div>
 
-      <button mat-button matStepperNext>Próximo</button>
-    </mat-step>
+        <button mat-button matStepperNext>Próximo</button>
+      </mat-step>
 
-    <!--Endereço-->
-    <mat-step label="Endereço" completed="true">
-      <div>
-        <mat-form-field hideRequiredMarker appearance="legacy">
-          <mat-label>Rua</mat-label>
-          <input matInput required />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field hideRequiredMarker appearance="legacy" color="warn">
-          <mat-label>Número</mat-label>
-          <input matInput required />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field hideRequiredMarker appearance="legacy">
-          <mat-label>Bairro</mat-label>
-          <input matInput required />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field hideRequiredMarker appearance="legacy">
-          <mat-label>CEP</mat-label>
-          <input matInput required />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field hideRequiredMarker appearance="legacy">
-          <mat-label>Cidade</mat-label>
-          <input matInput required />
-        </mat-form-field>
-      </div>
-      <button mat-button matStepperPrevious>Voltar</button>
-      <button mat-button matStepperNext>Próximo</button>
-    </mat-step>
-    <mat-step label="Dados Funcionais" completed="false">
-      <div>
-        <hr />
-        <h3>Dados Gerados Automaticamente</h3>
-        <h4>NIF:</h4>
-        <h4>E-mail</h4>
-      </div>
+      <!--Endereço-->
+      <mat-step label="Endereço" completed="true">
+        <div>
+          <mat-form-field hideRequiredMarker appearance="legacy">
+            <mat-label>Rua</mat-label>
+            <input matInput required formControlName="rua" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field hideRequiredMarker appearance="legacy" color="warn">
+            <mat-label>Número</mat-label>
+            <input matInput required formControlName="numero" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field hideRequiredMarker appearance="legacy">
+            <mat-label>Bairro</mat-label>
+            <input matInput required formControlName="bairro" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field hideRequiredMarker appearance="legacy">
+            <mat-label>CEP</mat-label>
+            <input matInput required formControlName="cep" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field hideRequiredMarker appearance="legacy">
+            <mat-label>Cidade</mat-label>
+            <input matInput required formControlName="cidade" />
+          </mat-form-field>
+        </div>
+        <button mat-button matStepperPrevious>Voltar</button>
+        <button mat-button matStepperNext (click)="createFuncionario()">
+          Gerar Dados
+        </button>
+      </mat-step>
+      <mat-step label="Dados Funcionais" completed="false">
+        <div>
+          <hr />
+          <h3>Dados Gerados Automaticamente</h3>
+          <h4>NIF:</h4>
+          <h4>E-mail</h4>
+        </div>
 
-      <button mat-button matStepperPrevious>Voltar</button>
-    </mat-step>
-  </mat-vertical-stepper>
+        <button mat-button matStepperPrevious>Voltar</button>
+      </mat-step>
+    </mat-vertical-stepper>
+  </form>
 </section>

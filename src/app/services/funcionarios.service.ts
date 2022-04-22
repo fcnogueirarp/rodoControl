@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { IFuncionario } from '../pages/consultas/IFuncionario';
 
 @Injectable({
@@ -8,10 +7,16 @@ import { IFuncionario } from '../pages/consultas/IFuncionario';
 })
 export class FuncionariosService {
   UrlBase = 'https://localhost:7183/api/funcionarios';
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {}
+
+  listFuncionarios() {
+    return this.http.get<IFuncionario[]>(this.UrlBase);
+  }
+  retrieveFuncionario(id: number) {
+    return this.http.get<IFuncionario>(`${this.UrlBase}/${id}`);
   }
 
-  setFuncionarios(){
-    return this.http.get<IFuncionario[]>(this.UrlBase);
+  createFuncionario(funcionario: IFuncionario) {
+    return this.http.post<IFuncionario>(this.UrlBase, funcionario);
   }
 }
