@@ -12,7 +12,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -22,13 +22,13 @@ const MaterialComponents = [
   MatFormFieldModule,
   MatStepperModule,
   MatInputModule,
-  MatButtonModule,
   MatAutocompleteModule,
   MatDividerModule,
   MatProgressBarModule,
   MatSelectModule,
   MatCheckboxModule,
-  MatMenuModule
+  MatMenuModule,
+  MatButtonModule,
 ];
 
 @NgModule({

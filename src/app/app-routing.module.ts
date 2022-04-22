@@ -34,6 +34,7 @@ const routes: Routes = [
   { path: 'pneus', component: PneusComponent },
   { path: 'veiculos', component: VeiculosComponent },
   { path: 'CEP', component: CepComponent },
+  { path: 'consulta/cadastros', component: CadastrosComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

@@ -27,6 +27,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { TitleComponent } from './components/title/title.component';
 import { LinkbuttonComponent } from './components/linkbutton/linkbutton.component';
 import { CepComponent } from './pages/cep/cep.component';
+import {ConsultasComponent} from './pages/consultas/consultas.component'
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { CepComponent } from './pages/cep/cep.component';
     TitleComponent,
     LinkbuttonComponent,
     CepComponent,
+    ConsultasComponent
   ],
   imports: [
     BrowserAnimationsModule,
