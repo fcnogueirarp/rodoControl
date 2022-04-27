@@ -19,4 +19,12 @@ export class FuncionariosService {
   createFuncionario(funcionario: IFuncionario) {
     return this.http.post<IFuncionario>(this.UrlBase, funcionario);
   }
+
+  updateFuncionario(funcionario: IFuncionario) {
+    return this.http.put<IFuncionario>(`${this.UrlBase}`, funcionario);
+  }
+
+  deleteFuncionario(id: number) {
+    return this.http.delete(`${this.UrlBase}/${id}`);
+  }
 }
